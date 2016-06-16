@@ -1,5 +1,6 @@
 import argparse
 import sys
+from . import configure
 
 
 def get_config_yaml(path):
@@ -7,7 +8,11 @@ def get_config_yaml(path):
 
 
 def do_genconf(args, config):
-    pass
+    configure.do_configure(
+        config,
+        bootstrap_path=args.bootstrap_tarball_path,
+        active_json_path=args.active_json_path,
+        work_dir=args.work_dir)
 
 
 def parse_args():
@@ -29,6 +34,12 @@ def parse_args():
         default=None,
         type=str,
         help='Path to the active.json file')
+
+    parser.add_argument(
+        '--work-dir',
+        default='./dcos_genconf_artifacts',
+        type=str,
+        help='The working directory to dump complete configuration.')
 
     args = parser.parse_args(sys.argv[1:])
     return args
