@@ -10,11 +10,11 @@ config = {
     'maintainer_email': 'help@dcos.io',
     'url': 'https://dcos.io',
     'packages': [
-        'genconf'
+        'dcos_genconf'
     ],
     'entry_points': {
         'console_scripts': [
-            'dcos-genconf= genconf.service:run'
+            'dcos-genconf=dcos_genconf.service:main'
         ]
     },
     'install_requires': ['gen']
