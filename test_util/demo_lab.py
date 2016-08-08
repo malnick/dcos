@@ -147,6 +147,13 @@ def main():
                 add_config_path=add_config_path,
                 rexray_config=REXRAY_CONFIG)
 
+        print("==>")
+        print("VPC Deployed: {}".format(unique_cluster_id))
+        print("Intaller Host: {}".format(test_host))
+        print("Master(s): {}".format(master_list))
+        print("Agent(s): {}".format(agent_list))
+        print("SSH Key URL: {}".format(ssh_key_url))
+        print("<==")
 
 if __name__ == "__main__":
     main()
