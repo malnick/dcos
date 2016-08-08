@@ -65,7 +65,7 @@ def get_local_address(tunnel, remote_dir):
 def main():
     # Get VPC
     random_identifier = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
-    unique_cluster_id = "installer-test-{}".format(random_identifier)
+    unique_cluster_id = "training-{}".format(random_identifier)
     log.info("Spinning up AWS VPC via CCM with ID: {}".format(unique_cluster_id))
     ccm = test_util.ccm.Ccm()
     vpc = ccm.create_vpc(
@@ -130,7 +130,7 @@ def main():
         password_hash = '$6$rounds=656000$WZdTPdpxUZsDG5PG$6om6ApIm5l5639JNAUmtFD87cIXdWCAVKeJ4zNlhmPKWT3PARF6Ai.HpcjR8SPQSQnqoefBiLaZmPuMFhGhpm0'  # noqa
         add_config = {
                 'customer_key': '123456-78901-234567-89012345-6789012',
-                'superuser_username': 'testadmin',
+                'superuser_username': 'trainee',
                 'superuser_password_hash': password_hash}
         add_config_path = 'add_config.yaml'
         with open(add_config_path, 'w') as fh:
