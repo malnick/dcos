@@ -107,6 +107,7 @@ def main():
             tunnel.remote_cmd(['sudo', 'usermod', '-aG', 'docker', ssh_user])
 
     test_host = host_list[0]
+    public_master_ip = host_list[1]
     master_list = [local_ip[host_list[1]]]
     agent1 = local_ip[host_list[2]]
     agent2 = local_ip[host_list[3]]
@@ -150,6 +151,7 @@ def main():
         print("==>")
         print("VPC Deployed: {}".format(unique_cluster_id))
         print("Intaller Host: {}".format(test_host))
+        print("Public Master IP: {}".format(public_master_ip))
         print("Master(s): {}".format(master_list))
         print("Agent(s): {}".format(agent_list))
         print("SSH Key URL: {}".format(ssh_key_url))
